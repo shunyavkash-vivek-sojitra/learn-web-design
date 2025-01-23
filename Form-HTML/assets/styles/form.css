@@ -1,0 +1,262 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Syne", sans-serif;
+  scroll-behavior: smooth;
+  letter-spacing: 1px;
+  outline: none;
+}
+body {
+  font-feature-settings: "pnum" on, "lnum" on;
+  color: white;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+::selection {
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* default */
+input {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  border: 0;
+  font-size: 16px;
+  caret-color: white;
+  color: white;
+}
+input::placeholder {
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.7);
+}
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+a,
+button {
+  cursor: pointer;
+}
+a,
+button,
+img {
+  display: block;
+}
+ul {
+  list-style: none;
+}
+ul li a {
+  color: #ffffff;
+}
+
+/* quick class */
+.container {
+  width: 100%;
+  padding-inline: 40px;
+}
+.d-flex {
+  display: flex;
+}
+.text-upp {
+  text-transform: uppercase;
+}
+.text-cap {
+  text-transform: capitalize;
+}
+
+/* main section */
+.bg-main {
+  height: 100dvh;
+  background: url("../images/bg-main.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* header */
+header {
+  padding: 16px;
+}
+
+.header-wrap {
+  max-width: 1440px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  margin-inline: auto;
+  padding: 6px 26px;
+}
+
+.header-wrap ul {
+  gap: 18px;
+}
+
+.header-wrap ul li a {
+  color: rgb(80, 56, 60);
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.header-wrap ul li a:hover {
+  color: white;
+  background-color: rgba(80, 56, 60, 0.8);
+}
+
+/* toggle-button */
+.toggle-wrap {
+  display: none;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.logo-wrap {
+  width: 70px;
+  height: 70px;
+}
+
+.logo-wrap img {
+  width: 100%;
+}
+
+.toggle-wrap i {
+  font-size: 24px;
+  padding: 3px;
+}
+
+/* toggle-nav */
+.toggle-nav {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  left: 0;
+  top: 100px;
+  display: none;
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 3;
+  padding: 20px;
+}
+.toggle-nav nav {
+  border-radius: 12px;
+  /* background-color: rgba(255, 255, 255); */
+  background-color: rgba(80, 56, 60, 0.9);
+  width: 100%;
+}
+.toggle-nav nav ul {
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0;
+}
+.toggle-nav nav ul li {
+  width: 100%;
+}
+.toggle-nav nav ul li a {
+  font-size: 24px;
+  padding: 20px 40px;
+  color: white;
+  transition: all 0.4s ease;
+}
+.toggle-nav nav ul li a:hover {
+  /* color: rgb(252, 99, 107); */
+  color: rgb(80, 56, 60);
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.toggle-wrap:hover .toggle-nav {
+  display: block;
+  opacity: 1;
+}
+
+@media (max-width: 630px) {
+  /* header */
+  .header-wrap nav {
+    display: none;
+    opacity: 0;
+  }
+
+  /* toggle */
+  .toggle-wrap {
+    display: block;
+    opacity: 1;
+  }
+
+  /* toggle nav */
+  .toggle-wrap i {
+    color: rgb(80, 56, 60);
+  }
+  .toggle-nav nav {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+/* main content */
+.content-wrap {
+  padding: 16px;
+  max-width: 350px;
+  margin: 203px auto;
+}
+/* inputs */
+.input-wrap {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 40px;
+  gap: 14px;
+}
+/* submit */
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  border-radius: 40px;
+  margin-inline: auto;
+  background-color: rgb(252, 99, 107);
+  color: white;
+  font-weight: 600;
+  border: 0;
+  transition: all 0.3s ease;
+}
+.btn-submit:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgb(80, 56, 60);
+  border: 0;
+}
+.main-content-ul {
+  margin-top: 16px;
+  font-size: 15px;
+  justify-content: space-between;
+}
+.main-content-ul li a {
+  transition: all 0.3s ease;
+}
+.main-content-ul li:first-child a:hover {
+  color: rgb(252, 99, 107);
+}
+.main-content-ul li:last-child a {
+  color: rgba(255, 255, 255, 0.7);
+}
+.main-content-ul li:last-child a:hover {
+  color: rgb(255, 255, 255);
+}
+@media (max-width: 375px) {
+  /* main content */
+  .main-content-ul {
+    text-align: end;
+    display: block;
+  }
+  .main-content-ul li:last-child {
+    margin-top: 12px;
+  }
+}
