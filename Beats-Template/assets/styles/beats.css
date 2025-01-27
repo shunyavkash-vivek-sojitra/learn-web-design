@@ -7,6 +7,7 @@
 :root {
   --bg-light: rgb(255, 255, 255);
   --bg-dark: rgb(18, 18, 18);
+  --bg-dark-subtle: rgba(18, 18, 18, 0.5);
   --bg-red: rgb(239, 70, 63);
   --text-red: rgb(239, 70, 63);
   --text-red-subtle: rgba(239, 70, 63, 0.5);
@@ -65,6 +66,8 @@ ul {
   height: 100dvh;
   background-repeat: no-repeat;
   background-size: cover;
+  background-blend-mode: overlay;
+  background-color: var(--bg-dark-subtle);
 }
 /* header start */
 header {
@@ -92,6 +95,19 @@ header {
 .header-wrap ul li a {
   font-family: var(--font-secondary);
   padding: 8px;
+}
+.header-wrap ul li::after {
+  display: block;
+  content: "";
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--bg-red);
+  transition: all 0.4s ease-in-out;
+}
+.header-wrap ul li:hover::after {
+  width: 100%;
 }
 /* toggle */
 .toggle-wrap {
@@ -213,4 +229,41 @@ header {
 .hero-content .go-buy-wrap a:last-child {
   background-color: var(--bg-red);
   border-radius: 40px;
+  border: 2px solid transparent;
+}
+.hero-content .go-buy-wrap a:last-child:hover {
+  border: 2px solid var(--bg-light);
+}
+@media (max-width: 768px) {
+  /* hero content */
+  .hero-content h1 {
+    text-align: center;
+    font-size: 66px;
+  }
+  .hero-content h2 {
+    font-size: 52px;
+  }
+}
+@media (max-width: 560px) {
+  /* hero content */
+  .hero-content-wrap {
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .hero-content {
+    justify-self: end;
+    grid-area: 3/7/3/11;
+    text-align: end;
+    row-gap: 6px;
+  }
+  .hero-content h1 {
+    text-align: center;
+    font-size: 56px;
+  }
+  .hero-content h2 {
+    font-size: 42px;
+  }
+  .hero-content p {
+    font-size: 14px;
+  }
 }
