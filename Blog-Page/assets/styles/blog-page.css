@@ -95,9 +95,16 @@ ul li a {
   text-transform: capitalize;
 }
 .text-elepse {
-  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* max-width: 200px; */
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* overflow: hidden; */
+  text-wrap: wrap;
+  /* white-space: nowrap; */
 }
 /* header */
 header {
@@ -346,7 +353,7 @@ article h2 {
 
 article p {
   margin-bottom: 15px;
-  text-align: justify;
+  word-spacing: 1.5px;
 }
 
 article time {
@@ -429,6 +436,22 @@ article time {
 
 .blog-col article:hover .blog-img-wrap::after {
   opacity: 1;
+}
+.blog-col .read-more-wrap {
+  justify-content: end;
+}
+.blog-col .read-more-wrap a {
+  width: max-content;
+  text-align: end;
+  padding: 8px;
+  background-color: rgba(153, 111, 171, 0.5);
+  font-size: 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.blog-col .read-more-wrap a:hover {
+  background-color: rgb(153, 111, 171);
 }
 
 /* aside */
