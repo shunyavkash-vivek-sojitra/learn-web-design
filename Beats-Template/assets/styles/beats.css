@@ -88,18 +88,31 @@ header {
   width: 100%;
   object-fit: cover;
 }
+.logo-wrap img {
+  animation: spin 2000ms linear;
+}
+.logo-wrap:hover {
+  animation: spin 3000ms linear infinite;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* nav */
 .header-wrap ul {
   gap: 30px;
 }
 .header-wrap ul li a {
+  position: relative;
   font-family: var(--font-secondary);
   padding: 8px;
+  z-index: 3;
 }
 .header-wrap ul li::after {
   display: block;
   content: "";
-  width: 0%;
+  width: 100%;
   height: 2px;
   bottom: 0;
   left: 0;
@@ -107,7 +120,9 @@ header {
   transition: all 0.4s ease-in-out;
 }
 .header-wrap ul li:hover::after {
-  width: 100%;
+  background-color: var(--bg-red);
+  height: 100%;
+  transform: translateY(-35px);
 }
 /* toggle */
 .toggle-wrap {
@@ -144,6 +159,9 @@ header {
 .toggle-overscreen-wrap ul li a:hover {
   background-color: var(--bg-dark);
   color: var(--text-red);
+}
+.toggle-overscreen-wrap ul li::after {
+  display: none;
 }
 .toggle-wrap:hover .toggle-overscreen-wrap {
   display: block;
@@ -206,6 +224,7 @@ header {
   font-family: var(--font-secondary);
 }
 .hero-content p {
+  letter-spacing: 0.5px;
   font-size: 16px;
 }
 .hero-content .go-buy-wrap {
@@ -214,7 +233,8 @@ header {
   gap: 20px;
 }
 .hero-content .go-buy-wrap a {
-  padding: 12px 32px;
+  padding: 10px 30px;
+  text-wrap: nowrap;
   transition: all 0.3s ease;
 }
 .hero-content .go-buy-wrap a:first-child {
@@ -262,17 +282,10 @@ header {
     font-size: 14px;
   }
 }
-@media (max-width: 420px) {
+@media (max-width: 425px) {
   /* hero content */
-  .hero-content .go-buy-wrap a {
-    padding: 10px 30px;
-    font-size: 14px;
-  }
-}
-@media (max-width: 420px) {
   /* hero content */
   .hero-content-wrap {
-    /* grid-template-columns: repeat(2, 1fr); */
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
   }
@@ -290,5 +303,17 @@ header {
     padding: 10px 30px;
     transition: all 0.3s ease;
     font-size: 14px;
+  }
+  .hero-content .go-buy-wrap a {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+  .go-buy-wrap {
+    width: 100%;
+    align-items: end;
+    flex-direction: column;
+  }
+  .go-buy-wrap a {
+    width: max-content;
   }
 }
