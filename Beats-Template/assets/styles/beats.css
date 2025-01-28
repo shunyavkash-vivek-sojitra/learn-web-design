@@ -181,7 +181,7 @@ header {
   justify-self: end;
   grid-area: 2/7/2/11;
   text-align: end;
-  row-gap: 6px;
+  row-gap: 12px;
 }
 .hero-content h1,
 .hero-content h2 {
@@ -247,23 +247,48 @@ header {
 @media (max-width: 560px) {
   /* hero content */
   .hero-content-wrap {
-    grid-template-columns: repeat(11, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-  .hero-content {
-    justify-self: end;
-    grid-area: 3/7/3/11;
-    text-align: end;
-    row-gap: 6px;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
   }
   .hero-content h1 {
-    text-align: center;
+    text-align: end;
     font-size: 56px;
   }
   .hero-content h2 {
     font-size: 42px;
   }
   .hero-content p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 420px) {
+  /* hero content */
+  .hero-content .go-buy-wrap a {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 420px) {
+  /* hero content */
+  .hero-content-wrap {
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .hero-content h1 {
+    text-align: end;
+    font-size: 40px;
+  }
+  .hero-content h2 {
+    font-size: 35px;
+  }
+  .hero-content p {
+    font-size: 14px;
+  }
+  .hero-content .go-buy-wrap a {
+    padding: 10px 30px;
+    transition: all 0.3s ease;
     font-size: 14px;
   }
 }
