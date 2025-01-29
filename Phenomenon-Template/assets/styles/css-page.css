@@ -52,18 +52,14 @@ ul {
 ul li a {
   color: var(--text-light);
 }
-/* section:first-child {
-  padding: 0 0;
-} */
+
 section {
-  min-width: 495px;
   padding: 120px 0;
   background-color: var(--bg-light);
 }
 /* quick class */
 .container {
   width: 100%;
-  min-width: 495px;
   max-width: 1330px;
   margin-inline: auto;
   padding-inline: 40px;
@@ -531,6 +527,7 @@ nav ul li a:hover::after {
 .card-col h3 {
   font-size: 34px;
 }
+
 .card-col p {
   font-size: 18px;
   letter-spacing: 0.18px;
@@ -552,7 +549,16 @@ nav ul li a:hover::after {
   width: 100%;
   transition: all 0.4s ease;
 }
-
+@media (max-width: 375px) {
+  .card-col h3 {
+    font-size: 24px;
+  }
+  .card-col-img {
+    min-height: 170px;
+    width: 170px;
+    position: relative;
+  }
+}
 .card-col-img img:last-child {
   visibility: hidden;
   opacity: 0;
@@ -757,6 +763,30 @@ nav ul li a:hover::after {
 }
 
 /* reviews */
+.review-section {
+  background-color: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+.review-section:after {
+  content: "";
+  background: url("https://cdn.phenomenonstudio.com/wp-content/themes/phenomenon/img/darrow.svg")
+    no-repeat bottom;
+  background-size: contain;
+  width: 235px;
+  height: 235px;
+  position: absolute;
+  right: 0;
+  top: -75px;
+  transform: rotate(-10deg);
+}
+/* title */
+.review-title-wrap {
+  color: var(--text-light);
+}
+.review-title-wrap .section-title-wrap-span {
+  width: 80%;
+}
 
 /* Global Media */
 /* Title Media */
@@ -875,5 +905,9 @@ nav ul li a:hover::after {
   /* other */
   .hero-other-wrap h3 {
     font-size: 18px;
+  }
+  /* child section */
+  .section-title-wrap-span h2 {
+    font-size: 35px;
   }
 }
