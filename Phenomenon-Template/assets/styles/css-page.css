@@ -43,6 +43,14 @@ a,
 button {
   cursor: pointer;
 }
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
 a,
 button,
 img {
@@ -1009,10 +1017,6 @@ nav ul li a:hover::after {
   transform: rotate(-30deg);
   transition: all 0.5s ease-in-out;
 }
-@media (max-width: 425px) {
-  .cta-button a span:last-child i {
-  }
-}
 .cta-button:hover a span:last-child i {
   opacity: 1;
   top: 50%;
@@ -1023,6 +1027,14 @@ nav ul li a:hover::after {
 /* video section */
 .video-title-wrap .section-title-wrap-span {
   width: 70%;
+}
+/* video */
+.video-wrap {
+  position: relative;
+}
+.video-wrap video {
+  cursor: pointer;
+  max-width: 100%;
 }
 
 /* ==================================================== */
