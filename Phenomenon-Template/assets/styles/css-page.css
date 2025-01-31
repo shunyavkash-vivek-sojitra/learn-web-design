@@ -1101,7 +1101,12 @@ nav ul li a:hover::after {
   color: var(--text-dark);
   font-size: 24px;
   font-weight: 700;
-  margin: 24px 0;
+  margin-bottom: 24px;
+}
+@media (max-width: 1024px) {
+  .footer-col .col .title {
+    margin-top: 24px;
+  }
 }
 .footer-col .col ul {
   flex-direction: column;
