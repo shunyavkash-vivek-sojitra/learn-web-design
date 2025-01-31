@@ -13,12 +13,12 @@
   --bg-light: rgb(255, 254, 253);
   --bg-orange: rgb(242, 117, 26);
   --bg-footer: rgb(231, 248, 112);
-  --bg-lime: rgb(223, 248, 74);
+  --bg-lime: rgb(231, 248, 112);
   --text-dark: rgb(32, 33, 34);
   --text-dark-secondary: rgb(72, 73, 73);
   --text-light: rgb(255, 254, 253);
   --text-light-secondary: rgb(217, 217, 217);
-  --text-lime: rgb(223, 248, 74);
+  --text-lime: rgb(231, 248, 112);
   --text-orange: rgb(242, 117, 26);
 }
 body {
@@ -1037,6 +1037,161 @@ nav ul li a:hover::after {
   max-width: 100%;
 }
 
+/* Footer */
+.footer-section {
+  background-color: var(--bg-lime);
+  height: max-content;
+  /* position: fixed; */
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+.footer-section::after {
+  background: url("https://cdn.phenomenonstudio.com/wp-content/themes/phenomenon/img/star-full.svg")
+    no-repeat 50%;
+  display: block;
+  background-size: 250px;
+  width: 350px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100px;
+  bottom: 0;
+  animation: zoom-in-out 1s linear infinite alternate-reverse;
+}
+@keyframes zoom-in-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.footer-col {
+  border-bottom: 1px solid #1f2122;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+}
+@media (max-width: 1024px) {
+  /* footer-section::after */
+  .footer-section::after {
+    top: -900px;
+  }
+  /* footer-top */
+  /* footer-col */
+  .footer-col {
+    border-bottom: 1px solid #1f2122;
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+  }
+}
+/* col-1 */
+.footer-col .col .logo-wrap svg {
+  color: var(--bg-dark);
+}
+/* col-2 */
+.footer-col .col .title {
+  color: var(--text-dark);
+  font-size: 24px;
+  font-weight: 700;
+  margin: 24px 0;
+}
+.footer-col .col ul {
+  flex-direction: column;
+}
+.footer-col .col ul li {
+  margin-bottom: 8px;
+}
+.footer-col .col ul li a {
+  font-weight: 600;
+  font-size: 14px;
+  padding-bottom: 20px;
+  gap: 8px;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+.footer-col .col ul li a:hover {
+  color: var(--text-orange);
+}
+/* col-3 */
+.social-wrap img {
+  width: 16px;
+  height: 16px;
+}
+/* col-4 */
+.footer-col .col .locations {
+  gap: 24px;
+}
+.footer-col .col .locations .location * {
+  font-size: 14px;
+}
+.footer-col .col .locations .location p {
+  margin-top: 8px;
+}
+/* footer-bottom */
+.footer-bottom {
+  justify-content: space-around;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 24px;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+.footer-bottom ul {
+  gap: 20px;
+}
+.footer-bottom ul li a,
+.footer-bottom p {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 14px;
+}
+.footer-bottom ul li a {
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+.footer-bottom ul li a:hover {
+  color: var(--text-orange);
+}
+.footer-bottom ul li {
+  position: relative;
+}
+.footer-bottom ul li::after {
+  content: " ";
+  height: 25px;
+  width: 1px;
+  position: absolute;
+  background-color: var(--bg-dark);
+  bottom: -4px;
+  right: -11px;
+  transform: rotate(30deg);
+}
+.footer-bottom ul li:last-child:after {
+  height: 0px;
+  width: 0px;
+  position: absolute;
+}
+.footer-bottom p {
+  color: var(--text-dark-secondary);
+}
+
+@media (max-width: 425px) {
+  .footer-bottom ul {
+    flex-direction: column;
+    gap: 8px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .footer-bottom ul li::after {
+    display: none;
+  }
+}
 /* ==================================================== */
 /* Global Media */
 /* Title Media */
