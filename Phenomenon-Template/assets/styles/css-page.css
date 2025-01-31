@@ -749,6 +749,7 @@ nav ul li a:hover::after {
   .work-card-wrap {
     flex-direction: column;
     max-width: 500px;
+    gap: 60px;
     margin-inline: auto;
   }
   /* title */
@@ -830,6 +831,10 @@ nav ul li a:hover::after {
   border-radius: 20px;
   flex-direction: column;
   padding: 40px 40px 0;
+  transition: all 0.4s ease;
+}
+.review-card-inner:hover {
+  transform: scale(1.03);
 }
 /* top-img */
 .review-card-inner .top-img {
@@ -1036,6 +1041,34 @@ nav ul li a:hover::after {
   cursor: pointer;
   max-width: 100%;
 }
+
+/* fade start */
+.video-wrap::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.3) 25%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.3) 75%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  pointer-events: none; /* Ensure clicks pass through to the video */
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.video-wrap video:paused + .video-wrap::before {
+  opacity: 0;
+}
+/* fade end */
 
 /* Footer */
 .footer-section {
